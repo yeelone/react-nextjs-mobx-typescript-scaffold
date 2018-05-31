@@ -1,0 +1,31 @@
+{
+  "license": "MIT",
+  "name": "yeetiku",
+  "version": "0.0.1",
+  "description": "demo project utilizing firebase as datastore inn nextjs",
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.49",
+    "@zeit/next-less": "^0.3.0",
+    "@zeit/next-typescript": "^1.0.1",
+    "less": "^3.0.4",
+    "mobx": "^4.3.0",
+    "mobx-react": "^5.1.2",
+    "next": "^6.0.3",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "typescript": "^2.8.4"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.49",
+    "@babel/preset-typescript": "^7.0.0-beta.49",
+    "babel-plugin-root-import": "^5.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "fork-ts-checker-webpack-plugin": "^0.4.1"
+  }
+}
