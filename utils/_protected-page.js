@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { autorun } from 'mobx';
 import { observer } from 'mobx-react'
 import Router from 'next/router'
-import { getAuthStore } from '~/env/stores'
-import { LoadingPage } from '~/ui/generic'
+import { getAuthStore } from '../env/stores'
+import { LoadingPage } from '../ui/generic'
 
 export default function protectedPage(UI) {
     return observer(class ProtectedPage extends Component {

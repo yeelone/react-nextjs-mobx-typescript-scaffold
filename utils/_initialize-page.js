@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Provider } from 'mobx-react'
-import { initBaseStore, getAuthStore } from '~/env/stores'
+import { initBaseStore, getAuthStore } from '../env/stores'
 
 export default function initializePage (UI) {
   return class PageComponent extends Component {

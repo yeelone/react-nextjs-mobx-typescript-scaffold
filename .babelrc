@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "next/babel",
+    "@zeit/next-typescript/babel"
+  ],
+  "plugins": [
+    "babel-plugin-transform-decorators-legacy",
+    "babel-plugin-transform-class-properties",
+     "babel-plugin-root-import",
+      "@babel/plugin-transform-runtime"
+    ]
+}
