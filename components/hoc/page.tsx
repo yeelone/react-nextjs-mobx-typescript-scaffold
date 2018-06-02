@@ -1,19 +1,22 @@
 import React from 'react';
 import Head from 'next/head';
 import { Provider } from 'mobx-react';
-
-import App from '../primitives/app';
 import Header from '../compositions/header';
-
 import Stores from '../../stores/index';
+const styles = require('./styles.less');
 
-export default ComposedComponent => class extends React.Component {
+export interface IState {
+  stores:{}
+}
+
+
+export default ComposedComponent => class extends React.Component<any,IState> {
   static async getInitialProps(ctx) {
     let userState = null;
     const isServer = !!ctx.req;
 
     if (isServer === true) {
-      const User = Stores('__userStore__');
+      const User = Stores('__userStore__',{});
       userState = User.getUserFromCookie(ctx.req);
     }
 
@@ -33,17 +36,13 @@ export default ComposedComponent => class extends React.Component {
   }
 
   render() {
-    const styles =   null;
     return (<Provider {...this.state.stores} >
-      <App bgColor="#fffa65">
+      <div className={styles.app}>
         <Head>
-          <style>
-            { styles }
-          </style>
         </Head>
         <Header />
         <ComposedComponent user={this.props} />
-      </App>
+      </div>
     </Provider>);
   }
 };

@@ -1,4 +1,4 @@
-import { action, toJS, extendObservable,observable } from 'mobx';
+import { action, extendObservable,observable } from 'mobx';
 
 const defaultState = {
   error: null,
@@ -15,13 +15,6 @@ export default class User {
     extendObservable(this, User || defaultState);
   }
 
-  getJSON = () => toJS({
-    auth: this.auth,
-    displayName: this.displayName,
-    photoURL: this.photoURL,
-    uid: this.uid
-  })
-
   getUserFromCookie = (req) => {};
 
   signInWithGithub = async (e) => {
@@ -31,5 +24,6 @@ export default class User {
   }
 
   updateUser = action( ({displayName, photoURL, auth, uid}) => {
+    console.log(displayName,photoURL,auth,uid)
   })
 };

@@ -1,14 +1,21 @@
-import React from 'react'
-import { observable } from 'mobx'
-import { observer,inject } from 'mobx-react'
+/// <reference path="./interfaces.d.ts" />
+
+import * as React from 'react';
+import { observable } from 'mobx';
+import { observer,inject } from 'mobx-react';
 import Page from '../components/hoc/page';
-import Content from '../components/primitives/content';
+import { IAppProps } from './interfaces';
+
+const styles = require('./styles.less');
 
 @inject("userStore")
 @observer
-class Index extends React.Component {
+class Index extends React.Component<IAppProps, any>  {
 
     @observable test: string = 'test';
+    constructor(props : IAppProps) {
+        super(props);
+    }
 
     changeText = () => {
        this.test = 'new test ';
@@ -17,14 +24,14 @@ class Index extends React.Component {
     render(){
         
         return (
-            <Content>
+            <div className={styles.container}>
                 <p>
                 {this.props.userStore.username}
                 </p>
                 <p>
                 You can start now!!!
                 </p>
-            </Content>
+            </div>
         )
     }
 }
